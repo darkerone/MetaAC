@@ -229,6 +229,7 @@
                                     <RowDefinition Height="1*" />
                                     <RowDefinition Height="1*" />
                                     <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
@@ -247,13 +248,15 @@
                                 <Label Grid.Row="3" Grid.Column="1" Content="Artiste :"></Label>
                                 <Label Grid.Row="4" Grid.Column="1" Content="Album :"></Label>
                                 <Label Grid.Row="5" Grid.Column="1" Content="Année :"></Label>
+                                <Label Grid.Row="6" Grid.Column="1" Content="Remixé par :"></Label>
 
                                 <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.Title}" Height="18"></TextBox>
                                 <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.ArtistName}" Height="18"></TextBox>
                                 <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.AlbumName}" Height="18"></TextBox>
                                 <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.ReleaseDate}" Height="18"></TextBox>
+                                <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.RemixedBy}" VerticalAlignment="Center"></TextBox>
 
-                                <Expander Grid.Row="6" Grid.Column="0" IsExpanded="False" ExpandDirection="Down" Header="Image">
+                                <Expander Grid.Row="7" Grid.Column="0" IsExpanded="False" ExpandDirection="Down" Header="Image">
                                     <StackPanel>
                                         <Button  x:Name="btn_CopyImageFromInternet" 
                                             Command="{Binding CopyImageFromInternet}"
@@ -272,21 +275,20 @@
                                         </Button>
                                     </StackPanel>
                                 </Expander>
-                                
 
-                                <Grid Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top">
+
+                                <Grid Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*" />
-                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="124*" />
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition Width="95*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Button Grid.Row="6" Grid.Column="0" x:Name="btn_FromUserSearch" 
+                                    <Button Grid.Column="0" x:Name="btn_FromUserSearch" 
                                         Command="{Binding FromUserSearch}"
-                                        Content="Chercher" Width="100" Margin="0,5">
-                                    </Button>
-                                    <Button Grid.Row="6" Grid.Column="1" x:Name="btn_SaveFromUserSearch" 
+                                        Content="Chercher" Width="100" Margin="12,5"/>
+                                    <Button Grid.Column="1" x:Name="btn_SaveFromUserSearch" 
                                         Command="{Binding SaveMetadatasFromUser}"
-                                        Content="Enregistrer" Width="100" Margin="0,5">
-                                    </Button>
+                                        Content="Enregistrer" Width="100" Margin="12,5,13,5" Grid.ColumnSpan="2"/>
                                 </Grid>
 
                             </Grid>
