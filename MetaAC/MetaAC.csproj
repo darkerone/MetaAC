@@ -199,10 +199,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="webopensearchpage.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icones\AddAccount.png" />
+    <Resource Include="Icones\iconPlayer\pause.png" />
+    <Resource Include="Icones\iconPlayer\play.png" />
+    <Resource Include="Icones\iconPlayer\previous.png" />
+    <Resource Include="Icones\iconPlayer\rewind.png" />
+    <Resource Include="Icones\iconPlayer\stop.png" />
+    <Resource Include="Icones\RecordsDeleteRecord.png" />
+    <Resource Include="Icones\RejectApprovalRequest.png" />
+    <Resource Include="Icones\SaveAll.png" />
+    <Resource Include="Icones\SearchCalendarsOnline.png" />
+    <Resource Include="webopensearchpage.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

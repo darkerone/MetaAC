@@ -12,8 +12,8 @@ namespace MetaAC
 {
     public class Player : INotifyPropertyChanged
     {
-        const string ICON_PLAY = @"D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\iconPlayer\play.png";
-        const string ICON_PAUSE = @"D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\iconPlayer\pause.png";
+        const string ICON_PLAY = @"pack://application:,,,/Icones/iconPlayer/play.png";
+        const string ICON_PAUSE = @"pack://application:,,,/Icones/iconPlayer/pause.png";
 
         private MediaPlayer _mediaPlayer;
         private bool _isPlaying = false;

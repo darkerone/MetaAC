@@ -33,24 +33,24 @@
                             Command="{Binding AddMusiques}"
                             IsEnabled="{Binding BoutonsActifs}"
                             Header="Ajouter musiques" 
-                            Icon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\AddAccount.png" 
-                            LargeIcon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\AddAccount.png"
+                            Icon="pack://application:,,,/Icones/AddAccount.png" 
+                            LargeIcon="pack://application:,,,/Icones/AddAccount.png"
                             Width="100">
                         </Fluent:Button>
                         <Fluent:Button x:Name="btn_RemoveMusique" 
                             Command="{Binding RemoveMusiques}"
                             IsEnabled="{Binding BoutonsActifs}"
                             Header="Retirer la sélection"
-                            Icon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\RecordsDeleteRecord.png" 
-                            LargeIcon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\RecordsDeleteRecord.png"
+                            Icon="pack://application:,,,/Icones/RecordsDeleteRecord.png" 
+                            LargeIcon="pack://application:,,,/Icones/RecordsDeleteRecord.png"
                             Width="100">
                         </Fluent:Button>
                         <Fluent:Button x:Name="btn_ClearList" 
                             Command="{Binding ClearList}"
                             IsEnabled="{Binding BoutonsActifs}"
                             Header="Vider la liste" 
-                            Icon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\RejectApprovalRequest.png" 
-                            LargeIcon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\RejectApprovalRequest.png"
+                            Icon="pack://application:,,,/Icones/RejectApprovalRequest.png" 
+                            LargeIcon="pack://application:,,,/Icones/RejectApprovalRequest.png"
                             Width="100">
                         </Fluent:Button>
 
@@ -68,15 +68,15 @@
             		        Command="{Binding FindMetadatas}"
             		        IsEnabled="{Binding BoutonRechercherActif}"
             		        Header="{Binding TexteBoutonFindMetadatas}"
-                            Icon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\SearchCalendarsOnline.png" 
-                            LargeIcon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\SearchCalendarsOnline.png"/>
+                            Icon="pack://application:,,,/Icones/SearchCalendarsOnline.png" 
+                            LargeIcon="pack://application:,,,/Icones/SearchCalendarsOnline.png"/>
 
                         <Fluent:Button x:Name="btn_SaveChecked" 
                             Command="{Binding SaveCheckedMetadatasFromInternet}"
                             IsEnabled="{Binding BoutonsActifs}"
                             Header="Enregistrer la sélection"
-                            Icon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\SaveAll.png" 
-                            LargeIcon="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\SaveAll.png"/>
+                            Icon="pack://application:,,,/Icones/SaveAll.png" 
+                            LargeIcon="pack://application:,,,/Icones/SaveAll.png"/>
                     </Fluent:RibbonGroupBox>
                 </Fluent:RibbonTabItem>
             </Fluent:Ribbon>
@@ -159,7 +159,7 @@
                                         Command="{Binding Player.Stop}"
                                         Width="20" Margin="10,5" Background="{x:Null}" BorderBrush="{x:Null}"
                                     ToolTip="Stop">
-                                <Image Source="D:\Users\Antoine\Documents\Mes projets\MetaAC\MetaAC\Icones\iconPlayer\stop.png"></Image>
+                                <Image Source="pack://application:,,,/Icones/iconPlayer/stop.png"></Image>
                             </Button>
                             <Button x:Name="btn_play" 
                                     Command="{Binding Player.PlayPause}"
