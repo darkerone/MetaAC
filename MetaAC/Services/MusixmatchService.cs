@@ -12,6 +12,7 @@ namespace MetaAC.Services
 {
     public class MusixmatchService : ApiService<MetadatasMusixmatch>
     {
+        public override MetadatasSourceEnum Source { get { return MetadatasSourceEnum.Musixmatch; } }
 
         public MusixmatchService()
         {
@@ -22,11 +23,20 @@ namespace MetaAC.Services
         
         override public Metadatas search(Metadatas metadatasFromMusique)
         {
-            string recherche = "&q_track=" + escape(metadatasFromMusique.ArtistName + "-" + @metadatasFromMusique.Title);
+            string recherche = "&q_track=" + escape(Tools.UpperFirstLetters(metadatasFromMusique.ArtistName) + "-" + @metadatasFromMusique.Title);
             Metadatas metadatas;
 
             metadatas = request(recherche);
 
+            return metadatas;
+        }
+
+        public override Metadatas search(string text)
+        {
+            string recherche = "&q_track=" + escape(Tools.UpperFirstLetters(text));
+            Metadatas metadatas;
+
+            metadatas = request(recherche);
 
             return metadatas;
         }

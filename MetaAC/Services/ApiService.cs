@@ -14,6 +14,7 @@ namespace MetaAC.Services
     {
         protected string _parameters;
         protected string _url;
+        public abstract MetadatasSourceEnum Source { get; }
 
         /// <summary>
         /// Lance une recherche basée sur le titre et l'artiste des metadatas provenant d'une musique
@@ -21,6 +22,13 @@ namespace MetaAC.Services
         /// <param name="metadatasFromMusique">Metadatas d'une musique (fromFile, fromFileName, fromUser, fromInternet...)</param>
         /// <returns>Dans metadatas, Status peut valoir : NeedValidation, NoConnection, NoResult.</returns>
         public abstract Metadatas search(Metadatas metadatasFromMusique);
+
+        /// <summary>
+        /// Lance une recherche basée sur un texte
+        /// </summary>
+        /// <param name="string">Texte à rechercher</param>
+        /// <returns>Dans metadatas, Status peut valoir : NeedValidation, NoConnection, NoResult.</returns>
+        public abstract Metadatas search(string text);
 
         /// <summary>
         /// Convertis les métadonnées recues du serveur en des métadonnées "communes" à l'application
@@ -65,6 +73,8 @@ namespace MetaAC.Services
                 metadatas = new Metadatas();
                 metadatas.Status = Status.NoConnetion;
             }
+
+            metadatas.Source = Source;
 
             return metadatas;
         }

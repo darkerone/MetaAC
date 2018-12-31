@@ -155,11 +155,25 @@ namespace MetaAC.Services
             // On cherche sur Itunes
             metadatas = _itunesService.search(musique.MetaFromFileName);
 
-            // Si la seconde recherche n'a rien donnée
+            // Si la recherche n'a rien donnée
             if (metadatas.Status == Status.NoConnetion || metadatas.Status == Status.NoResult)
             {
                 // On cherche sur Musixmatch
                 metadatas = _musixmatchService.search(musique.MetaFromFileName);
+            }
+
+            // Si la recherche n'a rien donnée
+            if (metadatas.Status == Status.NoConnetion || metadatas.Status == Status.NoResult)
+            {
+                // On cherche sur Itunes avec un texte clean simple
+                metadatas = _itunesService.search(musique.CleanedName);
+            }
+
+            // Si la recherche n'a rien donnée
+            if (metadatas.Status == Status.NoConnetion || metadatas.Status == Status.NoResult)
+            {
+                // On cherche sur Musixmatch avec un texte clean simple
+                metadatas = _musixmatchService.search(musique.CleanedName);
             }
 
             return metadatas;

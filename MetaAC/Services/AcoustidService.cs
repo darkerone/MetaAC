@@ -14,6 +14,7 @@ namespace MetaAC.Services
 {
     public class AcoustidService : ApiService<MetadatasAcoustid>
     {
+        public override MetadatasSourceEnum Source { get { return MetadatasSourceEnum.AcoustId; } }
 
         public AcoustidService()
         {
@@ -36,6 +37,13 @@ namespace MetaAC.Services
 
             
             return metadatas;
+        }
+
+        public override Metadatas search(string text)
+        {
+            return new Metadatas() {
+                Status = Status.NoResult
+            };
         }
 
         /// <summary>

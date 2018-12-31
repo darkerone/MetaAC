@@ -23,6 +23,7 @@ namespace MetaAC
         public MemoryStream AlbumCoverStream { get; set; }
         public string Fingerprint { get; set; }
         public string RemixedBy { get; set; }
+        public MetadatasSourceEnum Source { get; set; }
 
         private ImageSource _albumCoverDisplay;
         public ImageSource AlbumCoverDisplay

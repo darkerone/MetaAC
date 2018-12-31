@@ -129,6 +129,7 @@
     <Compile Include="DamerauLevenshtein.cs" />
     <Compile Include="MetadatasModels\MetadatasAcoustid.cs" />
     <Compile Include="Audio\NAudioDecoder.cs" />
+    <Compile Include="MetadatasModels\MetadatasSourceEnum.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Services\AcoustidService.cs" />
     <Compile Include="Services\ServicesManager.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="PrincipalViewModel.cs" />
     <Compile Include="Enums\Status.cs" />
     <Compile Include="Enums\Update.cs" />
+    <Compile Include="Tools\Tools.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -13,6 +13,7 @@ namespace MetaAC.Services
 {
     public class ItunesService : ApiService<MetadatasItunes>
     {
+        public override MetadatasSourceEnum Source { get { return MetadatasSourceEnum.Itunes; } }
 
         public ItunesService()
         {
@@ -28,11 +29,20 @@ namespace MetaAC.Services
         
         override public Metadatas search(Metadatas metadatasFromMusique)
         {
-            string recherche = "term=" + escape(metadatasFromMusique.ArtistName + "-" + metadatasFromMusique.Title);
+            string recherche = "term=" + escape(Tools.UpperFirstLetters(metadatasFromMusique.ArtistName) + "-" + metadatasFromMusique.Title);
             Metadatas metadatas;
 
             metadatas = request(recherche);
 
+            return metadatas;
+        }
+
+        public override Metadatas search(string text)
+        {
+            string recherche = "term=" + escape(Tools.UpperFirstLetters(text));
+            Metadatas metadatas;
+
+            metadatas = request(recherche);
 
             return metadatas;
         }
@@ -111,6 +121,5 @@ namespace MetaAC.Services
 
             return bmpImage;
         }
-        
     }
 }

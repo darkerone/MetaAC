@@ -140,6 +140,7 @@
                             </GridViewColumn>
                             <GridViewColumn Header=" Artiste trouvé " DisplayMemberBinding="{Binding MetaFromInternet.ArtistName}"/>
                             <GridViewColumn Header=" Titre trouvé " DisplayMemberBinding="{Binding MetaFromInternet.Title}"/>
+                            <GridViewColumn Header=" Source " DisplayMemberBinding="{Binding MetaFromInternet.Source}"/>
                             <!--<GridViewColumn Header=" Album trouvé " DisplayMemberBinding="{Binding MetaFromInternet.AlbumName}"/>
                             <GridViewColumn Header=" Année trouvé " DisplayMemberBinding="{Binding MetaFromInternet.ReleaseDate}"/>
                             <GridViewColumn Header=" Etat " DisplayMemberBinding="{Binding MetaFromInternet.Status}"/>-->
