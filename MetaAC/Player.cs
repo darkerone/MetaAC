@@ -62,12 +62,14 @@ namespace MetaAC
 
         public void setMusique(Musique musique)
         {
-            _mediaPlayer.Close();
-            if (musique != null)
-            {
-                _mediaPlayer.Open(new Uri(musique.PathNameExtension));
-            }
-            IsPLaying = false;
+            // Commenté pour éviter les problèmes de "fichier utilisé par une autre application"
+            // Il faudrait trouver une solution qui libère le fichier
+            //_mediaPlayer.Close();
+            //if (musique != null)
+            //{
+            //    _mediaPlayer.Open(new Uri(musique.PathNameExtension));
+            //}
+            //IsPLaying = false;
         }
 
         public bool IsPLaying

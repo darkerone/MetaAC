@@ -132,6 +132,11 @@ namespace MetaAC
                     {
                         Meta.Tag.Title += $" ({metadatas.RemixedBy} Remix)";
                     }
+                    // Edité par
+                    if (metadatas.EditBy != null && metadatas.EditBy.Length > 0)
+                    {
+                        Meta.Tag.Title += $" ({metadatas.EditBy} Edit)";
+                    }
                 }
                     
 

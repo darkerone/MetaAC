@@ -156,7 +156,9 @@
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Détails : " Height="25"></Label>
                             <Label Content="{Binding SelectedMusique.CleanedName}" Height="25"></Label>
-                            <Button x:Name="btn_stop" 
+                            <!--Commenté pour éviter les problèmes de "fichier utilisé par une autre application"
+                            Il faudrait trouver une solution qui libère le fichier-->
+                            <!--<Button x:Name="btn_stop" 
                                         Command="{Binding Player.Stop}"
                                         Width="20" Margin="10,5" Background="{x:Null}" BorderBrush="{x:Null}"
                                     ToolTip="Stop">
@@ -167,7 +169,7 @@
                                     Width="20" Margin="10,5" Background="{x:Null}" BorderBrush="{x:Null}"
                                     ToolTip="Play/Pause">
                                 <Image Source="{Binding Player.PlayPauseIcon}"></Image>
-                            </Button>
+                            </Button>-->
 
                         </StackPanel>
                     </Expander.Header>
@@ -231,6 +233,7 @@
                                     <RowDefinition Height="1*" />
                                     <RowDefinition Height="1*" />
                                     <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
@@ -250,14 +253,16 @@
                                 <Label Grid.Row="4" Grid.Column="1" Content="Album :"></Label>
                                 <Label Grid.Row="5" Grid.Column="1" Content="Année :"></Label>
                                 <Label Grid.Row="6" Grid.Column="1" Content="Remixé par :"></Label>
+                                <Label Grid.Row="7" Grid.Column="1" Content="Edité par :"></Label>
 
                                 <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.Title}" Height="18"></TextBox>
                                 <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.ArtistName}" Height="18"></TextBox>
                                 <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.AlbumName}" Height="18"></TextBox>
                                 <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.ReleaseDate}" Height="18"></TextBox>
                                 <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.RemixedBy}" VerticalAlignment="Center"></TextBox>
+                                <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromUser.EditBy}" VerticalAlignment="Center"></TextBox>
 
-                                <Expander Grid.Row="7" Grid.Column="0" IsExpanded="False" ExpandDirection="Down" Header="Image">
+                                <Expander Grid.Row="8" Grid.Column="0" IsExpanded="False" ExpandDirection="Down" Header="Image">
                                     <StackPanel>
                                         <Button  x:Name="btn_CopyImageFromInternet" 
                                             Command="{Binding CopyImageFromInternet}"
@@ -278,7 +283,7 @@
                                 </Expander>
 
 
-                                <Grid Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top">
+                                <Grid Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="124*" />
                                         <ColumnDefinition Width="30" />
@@ -306,6 +311,7 @@
                                     <RowDefinition Height="1*" />
                                     <RowDefinition Height="1*" />
                                     <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
@@ -322,13 +328,15 @@
                                 <Label Grid.Row="4" Grid.Column="1" Content="Album :" VerticalAlignment="Center"></Label>
                                 <Label Grid.Row="5" Grid.Column="1" Content="Année :" VerticalAlignment="Center"></Label>
                                 <Label Grid.Row="6" Grid.Column="1" Content="Remixé par :" VerticalAlignment="Center"></Label>
+                                <Label Grid.Row="7" Grid.Column="1" Content="Edité par :" VerticalAlignment="Center"></Label>
 
                                 <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromInternet.Title}" VerticalAlignment="Center"></TextBox>
                                 <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromInternet.ArtistName}" VerticalAlignment="Center"></TextBox>
                                 <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromInternet.AlbumName}" VerticalAlignment="Center"></TextBox>
                                 <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromInternet.ReleaseDate}" VerticalAlignment="Center"></TextBox>
                                 <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromInternet.RemixedBy}" VerticalAlignment="Center"></TextBox>
-                                <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" x:Name="btn_SaveMetadatas" 
+                                <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding SelectedMusique.MetaFromInternet.EditBy}" VerticalAlignment="Center"></TextBox>
+                                <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" x:Name="btn_SaveMetadatas" 
                                         Command="{Binding SaveMetadatasFromInternet}"
                                         IsEnabled="{Binding SelectedMusique.HasMetaFromInternet}"
                                         Content="Enregistrer" Width="100" Margin="0,5">
